@@ -14,7 +14,7 @@ read -r -p "Make sudo passwordless? [y|N] " response
 
 if [[ $response =~ (yes|y|Y) ]];then
     sudo cp /etc/sudoers /etc/sudoers.bak
-    echo "($whoami) ALL=(ALL) NOPASSWD:ALL" | sudo tee -a /etc/sudoers > /dev/null
+    echo "$(whoami) ALL=(ALL) NOPASSWD:ALL" | sudo tee -a /etc/sudoers > /dev/null
     bot "You can now run sudo commands without password"
 fi
 
