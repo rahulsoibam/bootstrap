@@ -15,4 +15,9 @@ if [[ $response =~ (yes|y|Y) ]];then
     bot "User $username can now run sudo commands without password"
 fi
 
+bot "Symlinking ssh keys to new user"
+mkdir -p /home/$username/.ssh/
+cat /root/.ssh/authorized_keys >> /home/$username/.ssh/authorized_keys
+chown $username:$username /home/$username/.ssh/authorized_keys
+chmod 400 /home/$username/.ssh/authorized_keys
 bot "Exit this session and login using the new user"
