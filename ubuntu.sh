@@ -20,7 +20,7 @@ fi
 
 bot "Installing python, git, zsh and others"
 apt update
-require_apt apt install python3 python3-dev python3-pip
+require_apt python3 python3-dev python3-pip
 pip3 install thefuck
 require_apt tmux
 require_apt git
