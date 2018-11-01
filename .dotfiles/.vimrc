@@ -17,7 +17,7 @@ Plug 'rizzatti/dash.vim'
 " colorscheme
 Plug 'rahulsoibam/molokai'
 " Autocomplete feature
-" Plug 'Valloric/YouCompleteMe'
+Plug 'Valloric/YouCompleteMe'
 " Navigation (IDE frame)
 Plug 'scrooloose/nerdtree'
 " Tabs in NERDTree (but no longer maintained)
@@ -87,9 +87,11 @@ augroup vimrc
 augroup END
 
 " Set colorscheme
-let g:rehash256 = 1
-let g:molokai_original = 1
-colorscheme molokai
+if filereadable( expand("$HOME/.vim/plugged/molokai/colors/molokai.vim") )
+  let g:rehash256 = 1
+  let g:molokai_original = 1
+  colorscheme molokai
+endif
 
 filetype plugin indent on    " required
 " To ignore plugin indent changes, instead use:
