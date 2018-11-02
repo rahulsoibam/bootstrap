@@ -5,7 +5,7 @@ source ./echos.sh
 function require_apt() {
     running "apt $1 $2"
     action "apt install $1 $2"
-    apt install $1 $2
+    sudo apt install -y $1 $2
     if [[ $? != 0 ]]; then
         error "failed to install $1! aborting..."
         exit -1
